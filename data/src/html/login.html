@@ -1,0 +1,53 @@
+﻿<body class="bg1">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="box1">
+		<form onsubmit="input('username', 'password', '', '', '', '', 'filled', 'register', 'err0', '${redirect_path}', false); return false;"
+				method="post">
+			<table class="box1">
+				<col width="220px" />
+				<col width="180px" />
+				<tr>
+					<td class="required"><font size="4">Username: </font></td>
+					<td>
+						<input type="text"
+								id="username"
+								name="username"
+								maxlength="32"
+								style="font-size:16px; width:280px;"
+								onchange=""
+								value="${username}" />
+					</td>
+				</tr>
+				<tr>
+					<td class="required"><font size="4">Password: </font></td>
+					<td>
+						<input type="password"
+								id="password"
+								name="password"
+								maxlength="32"
+								style="font-size:16px; width:280px;"
+								onchange=""
+								value="" />
+					</td>
+				</tr>
+			</table>
+			<button id="toggle_password"
+					type="button"
+					class="linkbutton"
+					onclick="toggle_password_display('toggle_password', 'password', 'password');">
+				Show password
+			</button>
+			<div id="err0" class="error"><br/></div>
+			<input type="submit"
+					class="button1"
+					style="float:right; width:120px"
+					id="register"
+					name="register"
+					value="Login" />
+		</form>
+	</div>
+</body>

@@ -1,0 +1,89 @@
+﻿<body class="bg1">
+	<br/>
+	<div class="box1"
+		 style="max-width:900px; padding-bottom:15px;">
+		<table style="margin:auto;">
+			<col width="130px" />
+			<col width="90px" />
+			<col width="60px" />
+			<col width="160px" />
+			<col width="60px" />
+			<col width="160px" />
+			<col width="180px" />
+			<tr>
+				<td>
+					Page size (1-100):
+				</td>
+				<td>
+					<input id="page_size"
+						   value="${page_size}"
+						   maxlength="3"
+						   style="font-size:15px; width:36px; text-align:right; padding: 1px 3px;"
+						   oninput="digits_only('page_size'); set_filter_button('filter_button', 'page_size');"
+						   onchange="strip_zeroes('page_size', 1); set_filter_button('filter_button', 'page_size', true);"/>
+				</td>
+				<td>
+					Sort by:  
+				</td>
+				<td>
+					<select id="sort_select"
+							style="font-size:15px; width:160px; margin-right:10px;">
+						<option value="username" ${username_selected}>Username</option>
+						<option value="date" ${date_selected}>Register Date</option>
+					</select>
+				</td>
+				<td>
+					Order:
+				</td>
+				<td>
+					<select id="order_select"
+							style="font-size:15px; width:160px; margin-right:10px;">
+						<option value="asc" ${asc_selected}>Ascending</option>
+						<option value="desc" ${desc_selected}>Descending</option>
+					</select>
+				</td>
+				<td>
+					<input id="filter_button"
+						   type="submit"
+						   class="button2"
+						   style="float:right; width:150px"
+						   value="Apply Filter"
+						   onclick="apply_filter('page_size', 'sort_select', 'order_select', 'filter_button'); return false;" />
+				</td>
+			</tr>
+		</table>
+		<br/>
+		<table style="margin:auto;">
+			<tr>
+				${page_table}
+			</tr>
+		</table>
+	</div>
+	<br/>
+	<div class="box2border">
+		<h3 class="box2heading">User list</h3>
+		<div class="box2">
+			<table class="box2">
+				<col width="80px" />
+				<col width="440px" />
+				<col width="260px" />
+				<tr>
+					<td class="columnheader">ID</td>
+					<td class="columnheader">Username ${username_arrow}</td>
+					<td class="columnheader">Register date ${date_arrow}</td>
+				</tr>
+				${table_contents}
+			</table>
+		</div>
+	</div>
+	<br/>
+	<div class="box1"
+		 style="max-width:900px; padding-top:15px; padding-bottom:15px;">
+		<table style="margin:auto;">
+			<tr>
+				${page_table}
+			</tr>
+		</table>
+	</div>
+	<br/>
+</body>

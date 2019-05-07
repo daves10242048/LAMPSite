@@ -1,0 +1,117 @@
+﻿<body class="bg1">
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="box1">
+		<form onsubmit="input('username', 'password', 'password2', 'email', 'profile_private', 'email_private', 'filled', 'register', 'err0', '/'); return false;"
+				method="post">
+			<table class="box1">
+				<col width="220px" />
+				<col width="180px" />
+				<tr>
+					<td class="required"><font size="4">Username: </font></td>
+					<td>
+						<input type="text"
+								id="username"
+								name="username"
+								maxlength="32"
+								style="font-size:16px; width:280px;"
+							    oninput="set_username_errors('username', 'user_req_1', 'user_req_2', 'user_req_3');"
+								value="" />
+					</td>
+				</tr>
+				<tr>
+					<td class="required"><font size="4">Password: </font></td>
+					<td>
+						<input type="password"
+								id="password"
+								name="password"
+								maxlength="32"
+								style="font-size:16px; width:280px;"
+							    oninput="set_password_errors('password', 'pass_req_1', 'pass_req_2', 'pass_req_3', 'pass_req_4', 'pass_req_5', 'pass_req_6');
+										 validate_fields('password', 'register', 'password', 'password2', 'email');"
+								value="" />
+					</td>
+				</tr>
+				<tr>
+					<td class="required"><font size="4">Retype Password: </font></td>
+					<td>
+						<input type="password"
+								id="password2"
+								name="password2"
+								maxlength="32"
+								style="font-size:16px; width:280px;"
+								oninput="validate_fields('password2', 'register', 'password', 'password2', 'email');"
+								value="" />
+					</td>
+				</tr>
+				<tr>
+					<td><font size="4">Email Address: </font></td>
+					<td>
+						<input type="text"
+								id="email"
+								name="email"
+								maxlength="254"
+								style="font-size:16px; width:280px;"
+								oninput="validate_fields('email', 'register', 'password', 'password2', 'email');"
+								value="" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"
+							   id="profile_private"
+							   name="profile_private"
+							   class="checkboxljust"
+							   onchange="privacy_changed('profile_private', 'email_private');" />
+						<font size="3">Make profile private </font>
+					</td>
+					<td>
+						<input type="checkbox"
+							   id="email_private"
+							   name="email_private"
+							   class="checkboxljust"
+							   checked />
+						<font size="3">Make email private </font>
+					</td>
+				</tr>
+			</table>
+			<button id="toggle_password"
+					type="button"
+					class="linkbutton"
+					onclick="toggle_password_display('toggle_password', 'password', 'password2');">
+				Show password
+			</button>
+			<div id="err0" class="error"><br/></div>
+			<div id="err1" class="error"><br/></div>
+			<input type="submit"
+					class="button1"
+					style="float:right; width:120px"
+					id="register"
+					name="register"
+					value="Register" />
+			<input type="hidden"
+					id="filled"
+					name="filled"
+					value="" />
+		</form>
+
+	</div>
+	<br />
+	<div class="box1novpad">
+		<div class="noerror">Username requirements:</div>
+		<div id="user_req_1" class="error2">Your username must be between 1 and 32 characters long.</div>
+		<div id="user_req_2" class="noerror2">Your username cannot contain any non-ascii or unprintable characters.</div>
+		<div id="user_req_3" class="noerror2">Your username cannot contain the following characters: "@,</div>
+		<br />
+		<div class="noerror">Password requirements:</div>
+		<div id="pass_req_1" class="error2">Your password must be between 8 and 32 characters long.</div>
+		<div id="pass_req_2" class="error2">Your password must contain at least 1 uppercase letter.</div>
+		<div id="pass_req_3" class="error2">Your password must contain at least 1 lowercase letter.</div>
+		<div id="pass_req_4" class="error2">Your password must contain at least 1 digit.</div>
+		<div id="pass_req_5" class="noerror2">Your password cannot contain any non-ascii or unprintable characters.</div>
+		<div id="pass_req_6" class="noerror2">Your password cannot contain spaces.</div>
+	</div>
+</body>
